@@ -22,7 +22,7 @@ private $set,$amount;
          if (!file_exists($this->getDataFolder())) mkdir($this->getDataFolder());
          $this->getServer()->getPluginManager()->registerEvents($this, $this);
  
-         $this->set = new Config($this->getDataFolder() . "KillGiveMoney.yml", Config::YAML, array("amount" =>100, array()));
+         $this->set = new Config($this->getDataFolder() . "KillGiveMoney.yml", Config::YAML, array("amount" =>100));
          $this->amount = $this->set->get("amount");
      }
 
