@@ -18,8 +18,6 @@ class Main extends PluginBase implements Listener{
 
 private $set,$amount;
 
-
-
  public function onEnable() {
          if (!file_exists($this->getDataFolder())) mkdir($this->getDataFolder());
          $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -28,17 +26,14 @@ private $set,$amount;
          $this->amount = $this->set->get("amount");
      }
 
-
-
  public function onDeath(PlayerDeathEvent $ev){
       $api = API::getInstance();
     	$entity = $ev->getPlayer();
     	$cause = $entity->getLastDamageCause();
     	if($cause instanceof EntityDamageByEntityEvent){
-    	  if($this->$api)
     		$damager = $cause->getDamager();
     		$damagername = $damager->getName();
-    		$this->$api->increase($player, $amount);
+    		$this->$api->increase($damagername, $amount);
     	}
     }
 
