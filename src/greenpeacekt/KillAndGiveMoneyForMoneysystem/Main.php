@@ -23,7 +23,7 @@ private $set,$amount;
          $this->getServer()->getPluginManager()->registerEvents($this, $this);
  
          $this->set = new Config($this->getDataFolder() . "KillGiveMoney.yml", Config::YAML, array("amount" =>100, array()));
-         $this->$amount = $this->set->get("amount");
+         $this->amount = $this->set->get("amount");
      }
 
 
